@@ -10,7 +10,7 @@
     <groupId>fr.paris.lutece.plugins</groupId>
     <artifactId>module-mylutece-openam</artifactId>
     <packaging>lutece-plugin</packaging>
-    <version>1.0.7-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
     <name>Lutece mylutece openam module</name>
 
     <repositories>
