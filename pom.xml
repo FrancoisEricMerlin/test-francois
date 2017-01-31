@@ -8,10 +8,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.paris.lutece.plugins</groupId>
-    <artifactId>module-mylutece-openam</artifactId>
+    <artifactId>plugin-releaser-test</artifactId>
     <packaging>lutece-plugin</packaging>
-    <version>1.0.6</version>
-    <name>Lutece mylutece openam module</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Lutece releaser test</name>
 
     <repositories>
         <repository>
@@ -30,30 +30,18 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>fr.paris.lutece.plugins</groupId>
-            <artifactId>plugin-mylutece</artifactId>
-            <version>[3.0.0,)</version>
-            <type>lutece-plugin</type>
-        </dependency>
-        <dependency>
-            <groupId>fr.paris.lutece.plugins</groupId>
-            <artifactId>library-httpaccess</artifactId>
-            <version>[2.4.0,)</version>
-        </dependency>
-    </dependencies>
+   
 
     <properties>
-        <componentName>mylutece-openam</componentName>
+        <componentName>plugin-releaser-test</componentName>
         <jiraProjectName>MMOPENAM</jiraProjectName>
         <jiraComponentId>12867</jiraComponentId>
     </properties>
     
     <scm>
-        <connection>scm:git:https://github.com/lutece-platform/lutece-auth-module-mylutece-openam.git</connection>
-        <developerConnection>scm:git:https://github.com/lutece-platform/lutece-auth-module-mylutece-openam.git</developerConnection>
-        <url>https://github.com/lutece-platform/lutece-auth-module-mylutece-openam.git</url>
+        <connection>scm:git:https://github.com/FrancoisEricMerlin/test-francois.git</connection>
+        <developerConnection>scm:git:https://github.com/FrancoisEricMerlin/test-francois.git</developerConnection>
+        <url>https://github.com/FrancoisEricMerlin/test-francois.git</url>
       <tag>HEAD</tag>
   </scm>
     
