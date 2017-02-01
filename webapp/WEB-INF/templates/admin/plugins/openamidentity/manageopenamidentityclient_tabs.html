@@ -1,0 +1,11 @@
+<#macro tabs tab >
+<div>
+    <ul class="nav nav-tabs">
+        <li <#if tab="client">class="active"</#if>>
+            <a href="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp">
+                #i18n{openamidentity.manage_clients.pageTitle}
+            </a>
+        </li>
+    </ul>
+</div>
+</#macro>

@@ -1,0 +1,64 @@
+<#include "manageopenamidentityclient_tabs.html" />
+<@tabs tab="client" />
+
+<div class="row-fluid" >
+    <div class="span12">
+
+        <@messages infos=infos />
+
+        <form method="post"  action="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp">
+            <button name="view_createClient" class="btn btn-primary pull-right" type="submit">
+                <i class="icon-plus icon-white"></i>
+                #i18n{openamidentity.manage_clients.buttonAdd}
+            </button>
+        </form>
+
+    <h4>#i18n{openamidentity.manage_clients.tableLabel}</h4>    
+
+    <@paginationAdmin paginator=paginator combo=1 />
+    
+    <table class="table table-condensed table-striped">
+        <tr>
+                    <input type="hidden" id="id" name="id"  />
+                    <th>#i18n{openamidentity.manage_clients.columnClientId}</th>
+                    <th>#i18n{openamidentity.manage_clients.columnSecretId}</th>
+                    <th>#i18n{openamidentity.manage_clients.columnRight}</th>
+                    <th>#i18n{openamidentity.manage_clients.columnNotificationUrl}</th>
+            <th>#i18n{portal.util.labelActions}</th>
+        </tr>
+            <#list client_list as client >
+        <tr>
+                    <input type="hidden" id="id" name="id"  />
+                    <td>
+                        ${client.clientId}
+                    </td>
+                    <td>
+                        ${client.secretId}
+                    </td>
+                    <td>
+                        ${client.right}
+                    </td>
+                      <td>
+                        ${client.notificationUrl!}
+                    </td>
+        <td>
+            <a href="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp?view=modifyClient&id=${client.id}"
+               class="btn btn-primary btn-small" title="#i18n{portal.util.labelModify}">
+                <i class="icon-edit icon-white"></i>
+            </a>
+
+            <a href="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp?action=confirmRemoveClient&id=${client.id}"
+               class="btn btn-danger btn-small" title="#i18n{portal.util.labelDelete}" >
+                <i class="icon-trash icon-white"></i>
+            </a>
+        </td>
+        </tr>
+        </#list>
+    </table>
+
+    <@paginationAdmin paginator=paginator />
+
+    </div>
+</div>
+
+

@@ -1,0 +1,56 @@
+<#include "manageopenamidentityclient_tabs.html" />
+<@tabs tab="client" />
+
+<div class="row" >
+    <div class="span12">
+
+    <form class="form-horizontal" method="post" action="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp">
+        <fieldset>
+            <legend>#i18n{openamidentity.create_client.tableLabel}</legend>
+
+            <@messages errors=errors />
+
+            <input type="hidden" id="id" name="id"  />
+            <div class="control-group">
+                <label class="control-label" for="client_id" >#i18n{openamidentity.create_client.labelClientId} * :</label>
+                <div class="controls">
+                    <input type="text" id="client_id" name="client_id" value=""  maxlength="255" tabindex="1" />
+                    <span class="help-block">#i18n{openamidentity.create_client.labelClientId.help}</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="secret_id" >#i18n{openamidentity.create_client.labelSecretId} * :</label>
+                <div class="controls">
+                    <input type="text" id="secret_id" name="secret_id" value=""  maxlength="255" tabindex="2" />
+                    <span class="help-block">#i18n{openamidentity.create_client.labelSecretId.help}</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="right" >#i18n{openamidentity.create_client.labelRight} * :</label>
+                <div class="controls">
+               		<input type="radio" id="right" name="right" value="VIEWER">VIEWER</input>
+                    <input type="radio" id="right" name="right" value="MANAGER">MANAGER</input>
+                   <span class="help-block">#i18n{openamidentity.create_client.labelRight.help}</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="right" >#i18n{openamidentity.create_client.labelNotificationUrl} :</label>
+                <div class="controls">
+               		  <input type="text" id="notification_url" name="notification_url" value=""  maxlength="255" tabindex="1" />
+                 
+                   <span class="help-block">#i18n{openamidentity.create_client.labelNotificationUrl.help}</span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button name="action_createClient" class="btn btn-primary" type="submit" tabindex="4">
+                    #i18n{portal.util.labelCreate}
+                </button>
+                <button name="view_manageClients" class="btn" type="submit" >
+                    #i18n{portal.util.labelCancel}
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+</div>
+

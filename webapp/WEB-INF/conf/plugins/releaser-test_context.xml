@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+
+    <!-- REST -->
+    <bean id="openam-identity.accountRest" class="fr.paris.lutece.plugins.openamidentity.rs.AccountRest" />
+    <bean id="openam-identity.accountTokenRest" class="fr.paris.lutece.plugins.openamidentity.rs.AccountTokenRest" />
+  	<bean id="openam-identity.identityRest" class="fr.paris.lutece.plugins.openamidentity.rs.IdentityRest" />
+  	<bean id="openam-identity.passwordHistoryRest" class="fr.paris.lutece.plugins.openamidentity.rs.PasswordHistoryRest" />
+  	<bean id="openam-identity.publicIdentityRest" class="fr.paris.lutece.plugins.openamidentity.rs.PublicIdentityRest" />
+  
+    <!-- Services -->
+  	<bean id="openam-identity.accountService" class="fr.paris.lutece.plugins.openamidentity.service.AccountService" />
+  	<bean id="openam-identity.accountTokenService" class="fr.paris.lutece.plugins.openamidentity.service.AccountTokenService" />
+  	<bean id="openam-identity.guidUserKeyService" class="fr.paris.lutece.plugins.openamidentity.service.GuidUserKeyService" />
+  	<bean id="openam-identity.apiSecurityService" class="fr.paris.lutece.plugins.openamidentity.service.ApiSecurityService" />
+  	<bean id="openam-identity.identityService" class="fr.paris.lutece.plugins.openamidentity.service.IdentityService" />
+  	<bean id="openam-identity.passwordHistoryService" class="fr.paris.lutece.plugins.openamidentity.service.PasswordHistoryService" />
+  	<bean id=" openam-identity.notificationClientService" class="fr.paris.lutece.plugins.openamidentity.service.NotificationClientService" />
+ 
+
+  
+    <!-- DAO -->
+  	<bean id="openam-identity.accountDAO" class="fr.paris.lutece.plugins.openamidentity.business.LdapAccountDAO" />
+  	<bean id="openam-identity.accountTokenDAO" class="fr.paris.lutece.plugins.openamidentity.business.AccountTokenDAO" />
+    <bean id="openam-identity.clientDAO"  class="fr.paris.lutece.plugins.openamidentity.business.ClientDAO" />  
+    
+    <!--  <bean id="openam-identity.identityDAO"  class="fr.paris.lutece.plugins.openamidentity.business.LdapIdentityDAO" />  -->
+    <bean id="openam-identity.identityDAO"  class="fr.paris.lutece.plugins.openamidentity.business.IdentityStoreDAO" />  
+    <bean id="openam-identity.passwordHistoryDAO"  class="fr.paris.lutece.plugins.openamidentity.business.PasswordHistoryDAO" />  
+ 
+    
+    <!-- IDENTITYSTORE BEAN -->
+    <bean id="openam-identity.identitystore.simpleRestTransport" class="fr.paris.lutece.plugins.identitystore.web.service.SimpleRestTransport" />
+    <bean id="openam-identity.identitystore.httpTransport" class="fr.paris.lutece.plugins.identitystore.web.rs.service.IdentityTransportRest">
+        <property name="IdentityStoreEndPoint">
+            <value>http://127.0.0.1:9092/lutece/rest/identitystore/</value>
+        </property>
+        <property name="httpTransport">
+            <ref bean="openam-identity.identitystore.simpleRestTransport"/>
+        </property>
+    </bean>       
+    <bean id="openam-identity.identitystore.service" class="fr.paris.lutece.plugins.identitystore.web.service.IdentityService">
+        <constructor-arg ref="openam-identity.identitystore.httpTransport"/>
+    </bean> 
+    
+  
+ </beans>

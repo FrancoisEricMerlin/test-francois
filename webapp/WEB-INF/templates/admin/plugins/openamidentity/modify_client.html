@@ -1,0 +1,64 @@
+<#include "manageopenamidentityclient_tabs.html" />
+<@tabs tab="client" />
+
+<div class="row" >
+    <div class="span12">
+
+    <form class="form-horizontal" method="post" action="jsp/admin/plugins/openamidentity/ManageOpenamidentityClient.jsp">
+        <fieldset>
+            <legend>#i18n{openamidentity.modify_client.tableLabel}</legend>
+
+            <@messages errors=errors />
+
+
+            <input type="hidden" id="id" name="id" value="${client.id}"/>
+
+            <div class="control-group">
+                <label class="control-label" for="client_id" >#i18n{openamidentity.modify_client.labelClientId} * :</label>
+                <div class="controls">
+                    <input type="text" id="client_id" name="client_id"  maxlength="255" value="${client.clientId}" tabindex="1" />
+                    <span class="help-block">#i18n{openamidentity.modify_client.labelClientId.help}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="secret_id" >#i18n{openamidentity.modify_client.labelSecretId} * :</label>
+                <div class="controls">
+                    <input type="text" id="secret_id" name="secret_id"  maxlength="255" value="${client.secretId}" tabindex="1" />
+                    <span class="help-block">#i18n{openamidentity.modify_client.labelSecretId.help}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="right" >#i18n{openamidentity.modify_client.labelRight} * :</label>
+                <div class="controls">
+                	<input type="radio" id="right" name="right" value="VIEWER" <#if client.right??&&client.right=="VIEWER"> checked </#if> >VIEWER</input>
+                    <input type="radio" id="right" name="right" value="MANAGER" <#if client.right??&&client.right=="MANAGER"> checked</#if>>MANAGER</input>
+    
+                    <span class="help-block">#i18n{openamidentity.modify_client.labelRight.help}</span>
+                </div>
+            </div>
+			      <div class="control-group">
+                <label class="control-label" for="right" >#i18n{openamidentity.modify_client.labelNotificationUrl} :</label>
+                <div class="controls">
+               		  <input type="text" id="notification_url" name="notification_url" value="${client.notificationUrl!}"  maxlength="255" tabindex="1" />
+                 
+                   <span class="help-block">#i18n{openamidentity.modify_client.labelNotificationUrl.help}</span>
+                </div>
+            </div>
+
+            <div class="form-actions">   
+                <button name="action_modifyClient" class="btn btn-primary" type="submit" tabindex="4" >
+                    #i18n{portal.util.labelModify}
+                </button>
+                <button name="view_manageClients" class="btn" type="submit" >
+                    #i18n{portal.util.labelCancel}
+                </button>	
+            </div>
+
+        </fieldset>
+    </form>
+    </div>  
+
+</div>
+
