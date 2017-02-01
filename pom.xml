@@ -37,7 +37,7 @@
             <version>[4.9.9,)</version>
             <type>lutece-core</type>
         </dependency>
-	</depencies>	
+	</dependencies>	
 
     <properties>
         <componentName>plugin-releaser-test</componentName>
